@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dish Details</title>
+</head>
+<body>
+    <header>
+        <h1>THE PLAZA</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#dishes">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dish-details">
+        <div class="content">
+            <h2 id="dish-name"></h2>
+            <p id="dish-price"></p>
+            <p id="dish-description"></p>
+            <p id="dish-availability"></p>
+            <div class="image">
+                <img id="dish-image" src="" alt="Dish Image">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; All rights reserved.<br />For pre-booking contact<br />Email: theplaza@gmail.com<br />Contact: 889900998<br />Location: 5th CTH Road, Chennai.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const name = localStorage.getItem('dishName');
+            const price = localStorage.getItem('dishPrice');
+            const description = localStorage.getItem('dishDescription');
+            const imgSrc = localStorage.getItem('dishImgSrc');
+            const availability = localStorage.getItem('dishAvailability');
+
+            document.getElementById('dish-name').textContent = name;
+            document.getElementById('dish-price').textContent = `Price: ${price}`;
+            document.getElementById('dish-description').textContent = description;
+            document.getElementById('dish-availability').textContent = `Availability: ${availability}`;
+            document.getElementById('dish-image').setAttribute('src', imgSrc);
+        });
+    </script>
+</body>
+</html>
